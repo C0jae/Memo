@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
         let controller = UISearchController(searchResultsController: SearchResultsViewController())
         controller.searchBar.placeholder = "검색"
         controller.searchBar.searchBarStyle = .minimal
+        controller.searchBar.tintColor = .white
         return controller
     }()
     
@@ -23,6 +24,15 @@ class MainViewController: UIViewController {
         return table
     }()
 
+    private func applyNavbar() {
+        navigationItem.rightBarButtonItems = [
+            UIBarButtonItem.init(title: "편집", style: .done, target: self, action: nil),
+            UIBarButtonItem.init(image: UIImage(systemName: "square.and.pencil"), style: .done, target: self, action: nil)
+        ]
+        
+        navigationController?.navigationBar.tintColor = .yellow
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "폴더"
@@ -32,6 +42,8 @@ class MainViewController: UIViewController {
         view.addSubview(listTable)
         
         navigationItem.searchController = searchController
+        
+        applyNavbar()
         
         listTable.delegate = self
         listTable.dataSource = self
