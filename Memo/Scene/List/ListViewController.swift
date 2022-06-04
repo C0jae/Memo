@@ -24,18 +24,26 @@ class ListViewController: UIViewController {
         return table
     }()
     
+    // 메모작성 버튼 생성
     private lazy var rightBarButton = UIBarButtonItem(
         image: UIImage(systemName: "square.and.pencil"),
         style: .done,
         target: self,
-        action: #selector(rightBarButtonClick())
+        action: #selector(rightBarButtonClick(_:))
     )
 
+    // 네비게이션바 생성 및 구성
     private func applyNavbar() {
         navigationItem.title = "메모 목록"
         navigationItem.rightBarButtonItem = rightBarButton
         
         navigationController?.navigationBar.tintColor = .white
+    }
+    
+    // 메모 작성화면 보여주기
+    private func pushToWriteViewController() {
+        let writeViewController = WriteViewController()
+        navigationController?.pushViewController(writeViewController, animated: true)
     }
     
     override func viewDidLoad() {
@@ -56,7 +64,8 @@ class ListViewController: UIViewController {
 }
 
 extension ListViewController {
-    @objc func rightBarButtonClick() {
-        
+    // 메모작성버튼 클릭 -> 작성화면으로 이동하기
+    @objc func rightBarButtonClick(_ sender: Any) {
+        pushToWriteViewController()
     }
 }

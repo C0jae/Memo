@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WriteMemoViewController: UIViewController {
+class WriteViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

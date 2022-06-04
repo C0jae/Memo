@@ -13,7 +13,7 @@
 		0B12F7C22848B86F00D7F999 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B12F7C02848B86F00D7F999 /* LaunchScreen.storyboard */; };
 		0B12F7CA2848D9D600D7F999 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B12F7C92848D9D600D7F999 /* ListViewController.swift */; };
 		0B3D68C32849E4CC00A26A84 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3D68C22849E4CC00A26A84 /* SearchResultsViewController.swift */; };
-		0B3D68C8284B257200A26A84 /* WriteMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3D68C7284B257200A26A84 /* WriteMemoViewController.swift */; };
+		0B3D68C8284B257200A26A84 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3D68C7284B257200A26A84 /* WriteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		0B12F7C32848B86F00D7F999 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B12F7C92848D9D600D7F999 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		0B3D68C22849E4CC00A26A84 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
-		0B3D68C7284B257200A26A84 /* WriteMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteMemoViewController.swift; sourceTree = "<group>"; };
+		0B3D68C7284B257200A26A84 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +81,7 @@
 		0B3D68C5284B1DF500A26A84 /* Write */ = {
 			isa = PBXGroup;
 			children = (
-				0B3D68C7284B257200A26A84 /* WriteMemoViewController.swift */,
+				0B3D68C7284B257200A26A84 /* WriteViewController.swift */,
 			);
 			path = Write;
 			sourceTree = "<group>";
@@ -164,7 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B3D68C8284B257200A26A84 /* WriteMemoViewController.swift in Sources */,
+				0B3D68C8284B257200A26A84 /* WriteViewController.swift in Sources */,
 				0B12F7B62848B86F00D7F999 /* AppDelegate.swift in Sources */,
 				0B3D68C32849E4CC00A26A84 /* SearchResultsViewController.swift in Sources */,
 				0B12F7B82848B86F00D7F999 /* SceneDelegate.swift in Sources */,
