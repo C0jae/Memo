@@ -13,7 +13,6 @@ class ListViewController: UIViewController {
         let searchBar = UISearchController(searchResultsController: SearchResultsViewController())
         searchBar.searchBar.placeholder = "메모 검색"
         searchBar.searchBar.searchBarStyle = .minimal
-        searchBar.searchBar.tintColor = .white
         return searchBar
     }()
     
@@ -37,7 +36,7 @@ class ListViewController: UIViewController {
         navigationItem.title = "메모 목록"
         navigationItem.rightBarButtonItem = rightBarButton
         
-        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.tintColor = .green
     }
     
     // 메모 작성화면 보여주기

@@ -15,6 +15,14 @@ class WriteViewController: UIViewController {
         return textView
     }()
     
+    // 왼쪽 바 버튼 : 목록으로 이동
+    private let leftBarButton = UIBarButtonItem (
+        image: UIImage(systemName: "arrow.left"),
+        style: .done,
+        target: self,
+        action: #selector(clickLeftBarButton(_:))
+    )
+    
     // 오른쪽 바 버튼 : 잠금버튼
     private lazy var lockRightBarButton = UIBarButtonItem (
         image: UIImage(systemName: "lock"),
@@ -28,26 +36,50 @@ class WriteViewController: UIViewController {
         image: UIImage(systemName: "checkmark"),
         style: .done,
         target: self,
-        action: nil)
+        action: nil
+    )
 
     private func applyNavBar() {
         navigationItem.rightBarButtonItems = [
-            lockRightBarButton, saveRightBarButton
+            saveRightBarButton ,lockRightBarButton
         ]
+        
+        navigationItem.leftBarButtonItem = leftBarButton
+        
+        navigationController?.navigationBar.tintColor = .red
+    }
+    
+    private func applyTextView() {
+        textView.tintColor = .white
+        textView.font = .systemFont(ofSize: 20)
+    }
+    
+    private func pushToListView() {
+        let listView = ListViewController()
+        navigationController?.pushViewController(listView, animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        title = "메모 작성"
         
         view.addSubview(textView)
+        
+        applyNavBar()
+        applyTextView()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        title = "메모 작성"
         
         textView.frame = view.bounds
     }
 
+}
+
+extension WriteViewController {
+    @objc func clickLeftBarButton(_ sender: Any) {
+        pushToListView()
+    }
 }
