@@ -39,6 +39,7 @@ class WriteViewController: UIViewController {
         action: nil
     )
 
+    // 네비게이션 바 구성
     private func applyNavBar() {
         navigationItem.rightBarButtonItems = [
             saveRightBarButton ,lockRightBarButton
@@ -49,14 +50,15 @@ class WriteViewController: UIViewController {
         navigationController?.navigationBar.tintColor = .red
     }
     
+    // 텍스트 뷰 구성
     private func applyTextView() {
         textView.tintColor = .white
         textView.font = .systemFont(ofSize: 20)
     }
     
+    // 리스트뷰로 이동
     private func pushToListView() {
-        let listView = ListViewController()
-        navigationController?.pushViewController(listView, animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
     
     override func viewDidLoad() {
