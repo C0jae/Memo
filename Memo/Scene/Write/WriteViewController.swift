@@ -46,8 +46,6 @@ class WriteViewController: UIViewController {
         ]
         
         navigationItem.leftBarButtonItem = leftBarButton
-        
-        navigationController?.navigationBar.tintColor = .red
     }
     
     // 텍스트 뷰 구성
@@ -63,7 +61,6 @@ class WriteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
         title = "메모 작성"
         
         view.addSubview(textView)

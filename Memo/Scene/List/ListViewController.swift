@@ -33,10 +33,7 @@ class ListViewController: UIViewController {
 
     // 네비게이션바 생성 및 구성
     private func applyNavbar() {
-        navigationItem.title = "메모 목록"
         navigationItem.rightBarButtonItem = rightBarButton
-        
-        navigationController?.navigationBar.tintColor = .green
     }
     
     // 메모 작성화면 보여주기
@@ -47,6 +44,7 @@ class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "메모 목록"
         
         view.addSubview(listTable)
         
