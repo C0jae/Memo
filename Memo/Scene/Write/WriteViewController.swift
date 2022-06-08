@@ -19,7 +19,7 @@ class WriteViewController: UIViewController {
     private let leftBarButton = UIBarButtonItem (
         image: UIImage(systemName: "arrow.left"),
         style: .done,
-        target: self,
+        target: nil,
         action: #selector(clickLeftBarButton(_:))
     )
     
