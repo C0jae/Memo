@@ -8,6 +8,17 @@
 import UIKit
 
 class WriteViewController: UIViewController {
+    private var presenter: WritePresenter
+    
+    init(isEditing: Bool, memo: Memo) {
+        super.init(nibName: nil, bundle: nil)
+        presenter = WritePresenter(viewController: self, isEditing: isEditing, memo: memo)
+    }
+    
+    required init(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // 메모 작성 뷰
     private let textView: UITextView = {
         let textView = UITextView()
@@ -39,46 +50,30 @@ class WriteViewController: UIViewController {
         action: nil
     )
 
-    // 네비게이션 바 구성
-    private func applyNavBar() {
-        navigationItem.rightBarButtonItems = [
-            saveRightBarButton ,lockRightBarButton
-        ]
-        
-        navigationItem.leftBarButtonItem = leftBarButton
-    }
-    
     // 텍스트 뷰 구성
     private func applyTextView() {
         textView.tintColor = .white
         textView.font = .systemFont(ofSize: 20)
     }
     
-    // 리스트뷰로 이동
-    private func pushToListView() {
-        navigationController?.popToRootViewController(animated: true)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "메모 작성"
         
-        view.addSubview(textView)
-        
-        applyNavBar()
-        applyTextView()
+        presenter.viewDidLoad()
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        textView.frame = view.bounds
-    }
-
 }
 
-extension WriteViewController {
+extension WriteViewController: WriteProtocol {
+    func setNavigationBar() {
+        title = "메모 작성"
+        navigationItem.leftBarButtonItem = leftBarButton
+        navigationItem.rightBarButtonItems = [saveRightBarButton, lockRightBarButton]
+    }
+    
     @objc func clickLeftBarButton(_ sender: Any) {
-        pushToListView()
+    }
+    
+    @objc func didTappedSaveRightBarButton() {
+        
     }
 }
